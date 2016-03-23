@@ -3,26 +3,28 @@ public class Wishlist
 	private ArrayList<ListItem> items;
 	private String username;
 	private int listID;
+	boolean isPurchasedList;
 
-	public Wishlist(String u, int id, List i)
+	public Wishlist(String u, int id, List i, boolean purchased)
 	{
 		username = u;
 		listID = id;
 		items = i;
+		isPurchasedList = purchased;
 	}
 
 	public Wishlist(String u, int id)
 	{
-		this(u, id, null);
+		this(u, id, null, false);
 	}
 
 	public Wishlist(String u)
 	{
-		this(u, 0, null);
+		this(u, 0, null, false);
 	}
 	public Wishlist()
 	{
-		this("", 0, null);
+		this("", 0, null, false);
 	}
 	
 	public void addItem(ListItem newItem)
@@ -48,6 +50,11 @@ public class Wishlist
 	public int getID()
 	{
 		return listID;
+	}
+	
+	public boolean isPurchaseList()
+	{
+		return isPurchasedList;
 	}
 
 	public void setUser(String u)
