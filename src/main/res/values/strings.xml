@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">WishList</string>
+    <string name="user">Username</string>
+    <string name="passwrd">Password</string>
+    <string name="login">Login</string>
+    <string name = "quit">Quit</string>
 </resources>
