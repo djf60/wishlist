@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Wishlist
 {
 	private ArrayList<ListItem> items;
@@ -9,7 +11,7 @@ public class Wishlist
 	{
 		username = u;
 		listID = id;
-		items = i;
+		items = (ArrayList<ListItem>) i;
 		isPurchasedList = purchased;
 	}
 

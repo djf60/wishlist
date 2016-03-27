@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.pitt.cs.cs1635.mew115.wishlist">
+    package="edu.pitt.cs.cs1635.mmr63.wishlist">
 
     <application
         android:allowBackup="true"

@@ -1,4 +1,4 @@
-package edu.pitt.cs.cs1635.mdb91.wishlist;
+package edu.pitt.cs.cs1635.mmr63.wishlist;
 
 import android.content.Context;
 import android.content.Intent;
@@ -48,11 +48,11 @@ public class LoginActivity extends AppCompatActivity {
             Toast toast = Toast.makeText(context, text, duration);
             toast.show();
             //launch main menu activity
-            /*
-            Intent intent = new Intent(this, MainMenuActivity.class);
+
+            Intent intent = new Intent(this, MainMenu.class);
             intent.putExtra("username", username);
             startActivity(intent);
-            */
+
         }
         else
         {

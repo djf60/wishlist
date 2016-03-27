@@ -4,7 +4,6 @@
     <string name="passwrd">Password</string>
     <string name="login">Login</string>
     <string name = "quit">Quit</string>
-    <string name="app_name">Wishlist</string>
     <string name="my_lists">My Lists</string>
     <string name="my_purchases_items">My Purchased Items</string>
     <string name="find_lists">Find Lists</string>
