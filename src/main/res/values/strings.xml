@@ -10,4 +10,5 @@
     <string name="find_lists">Find Lists</string>
     <string name="myLists">My Lists</string>
     <string name="logout">Logout</string>
+    <string name="title_activity_my_list">MyListActivity</string>
 </resources>
