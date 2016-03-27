@@ -13,6 +13,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+    <activity android:name="ResultsScreen"
+   		android:label=".MainMenu">
+   		<intent-filter>
+       		<action android:name="android.intent.action.VIEW" />
+   		</intent-filter>
+	</activity>
     </application>
 
 </manifest>
