@@ -1,71 +1,76 @@
-import java.util.*;
+package edu.pitt.cs.cs1635.mmr63.wishlist;
 
-public class Wishlist
-{
-	private ArrayList<ListItem> items;
-	private String username;
-	private int listID;
-	boolean isPurchasedList;
+import java.util.ArrayList;
+import java.util.List;
 
-	public Wishlist(String u, int id, List i, boolean purchased)
-	{
-		username = u;
-		listID = id;
-		items = (ArrayList<ListItem>) i;
-		isPurchasedList = purchased;
-	}
+/**
+ * Created by Max on 3/27/2016.
+ */
+public class WishList {
+    private ArrayList<ListItem> items;
+    private String username;
+    private int listID;
+    boolean isPurchasedList;
 
-	public Wishlist(String u, int id)
-	{
-		this(u, id, null, false);
-	}
+    public WishList(String u, int id, List i, boolean purchased)
+    {
+        username = u;
+        listID = id;
+        items = (ArrayList)i;
+        isPurchasedList = purchased;
+    }
 
-	public Wishlist(String u)
-	{
-		this(u, 0, null, false);
-	}
-	public Wishlist()
-	{
-		this("", 0, null, false);
-	}
-	
-	public void addItem(ListItem newItem)
-	{
-		items.add(newItem);
-	}
+    public WishList(String u, int id)
+    {
+        this(u, id, null, false);
+    }
 
-	public void removeItem(ListItem toRemove)
-	{
-		items.remove(toRemove);
-	}
+    public WishList(String u)
+    {
+        this(u, 0, null, false);
+    }
+    public WishList()
+    {
+        this("", 0, null, false);
+    }
 
-	public ArrayList<ListItem> getList()
-	{
-		return items;
-	}
+    public void addItem(ListItem newItem)
+    {
+        items.add(newItem);
+    }
 
-	public String getUser()
-	{
-		return username;
-	}
+    public void removeItem(ListItem toRemove)
+    {
+        items.remove(toRemove);
+    }
 
-	public int getID()
-	{
-		return listID;
-	}
-	
-	public boolean isPurchaseList()
-	{
-		return isPurchasedList;
-	}
+    public ArrayList<ListItem> getList()
+    {
+        return items;
+    }
 
-	public void setUser(String u)
-	{
-		username = u;
-	}
+    public String getUser()
+    {
+        return username;
+    }
 
-	public void setID(int i)
-	{
-		listID = i;
-	}
+    public int getID()
+    {
+        return listID;
+    }
+
+    public boolean isPurchaseList()
+    {
+        return isPurchasedList;
+    }
+
+    public void setUser(String u)
+    {
+        username = u;
+    }
+
+    public void setID(int i)
+    {
+        listID = i;
+    }
 }
