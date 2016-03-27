@@ -4,8 +4,8 @@
 - [X]implement list item data structure
 - [ ]implement data retrieval class (dummy w/ hardcoded data for now)
 - [ ]actual app activities:
-	- [ ]login screen
-	- [ ]main screen
+	- [X]login screen
+	- [X]main screen
 	- [ ]find wishlist
 	- [ ]view wishlist
 	- [ ]create wishlist
