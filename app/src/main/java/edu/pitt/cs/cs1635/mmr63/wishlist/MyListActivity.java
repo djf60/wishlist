@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.support.v7.widget.RecyclerView;
 
 public class MyListActivity extends Activity {
 

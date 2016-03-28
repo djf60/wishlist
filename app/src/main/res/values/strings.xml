@@ -10,4 +10,9 @@
     <string name="myLists">My Lists</string>
     <string name="logout">Logout</string>
     <string name="title_activity_my_list">MyListActivity</string>
+    <string name="my_list">My List</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="add_item">Add Item</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="remove_item">Remove Item</string>
 </resources>
