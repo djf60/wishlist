@@ -1,7 +1,8 @@
-package edu.pitt.cs.cs1635.mmr63.wishlist;
+package edu.pitt.cs.cs1635.mdb91.wishlist;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +19,7 @@ import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         private List<ListItem> mDataset;
-        public boolean[] selected;
-        private int numSelected;
+        private ArrayList<Integer> selected;
         private static Context context;
         // Provide a reference to the views for each data item
         // Complex data items may need more than one view per item, and
@@ -39,7 +39,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
                 price = (TextView)v.findViewById(R.id.price);
                 source = (TextView)v.findViewById(R.id.src);
                 priority = (TextView)v.findViewById(R.id.priority);
-                select = new CheckBox(context);
+                select = (CheckBox)v.findViewById((R.id.checkbox));
                 select.setSelected(false);
             }
         }
@@ -48,8 +48,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public ListAdapter(WishList myDataset, Context c) {
             mDataset = myDataset.getList();
             context = c;
-            selected = new boolean[myDataset.getList().size()];
-            numSelected = 0;
+            selected = new ArrayList<Integer>();
         }
 
         public void addItem(ListItem item)
@@ -61,8 +60,11 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         public void editItem(int index, ListItem item)
         {
             mDataset.remove(index);
+            notifyItemRemoved(index);
+            notifyItemRangeChanged(index, mDataset.size());
             mDataset.add(0, item);
             notifyDataSetChanged();
+            selected.clear();
         }
 
         // Create new views (invoked by the layout manager)
@@ -71,8 +73,6 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         {
             // create a new view
             View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_row, parent, false);
-            // set the view's size, margins, paddings and layout parameters
-
             ViewHolder vh = new ViewHolder(v);
             return vh;
         }
@@ -87,28 +87,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             holder.description.setText(item.getDescription());
             holder.price.setText("$"+String.valueOf(item.getPrice()));
             holder.source.setText(item.getSource());
-            holder.priority.setText(String.valueOf(item.getPriority()));
-            //setup checkbox clickListener
-            View.OnClickListener clickListener = new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    CheckBox checkBox = (CheckBox)view;
-                    if (checkBox.isSelected())
-                    {
-                        numSelected--;
-                        checkBox.setSelected(false);
-                        selected[(int) checkBox.getTag()] = false;
-                    }
-                    else
-                    {
-                        numSelected++;
-                        checkBox.setSelected(true);
-                        selected[(int)checkBox.getTag()] = true;
-                    }
-                }
-            };
-            holder.select.setTag(position);
-            holder.select.setOnClickListener(clickListener);
+            holder.priority.setText("Priority: " + String.valueOf(item.getPriority()));
+            holder.select.setTag(new Integer(position));
         }
 
         // Return the size of your dataset (invoked by the layout manager)
@@ -117,23 +97,30 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             return mDataset.size();
         }
 
-        public int getNumSelected()
+        public ArrayList<Integer> getSelected()
         {
-            return numSelected;
+            return selected;
         }
 
         public void removeSelected()
         {
-            for (int i = 0; i < selected.length; i++)
+            int lastRemoved = selected.get(0);
+            int toRemove = selected.get(0);
+            while(selected.size() > 0)
             {
-                if (selected[i] == true)
-                {
-                    mDataset.remove(i);
-                }
+                mDataset.remove(toRemove);
+                lastRemoved = toRemove;
+                notifyItemRemoved(toRemove);
+                notifyItemRangeChanged(toRemove, mDataset.size());
+                selected.remove(0);
+                if (selected.size() == 0) break;
+                toRemove = selected.get(0);
+                if (toRemove >= lastRemoved)
+                    toRemove--;
             }
-            selected = new boolean[mDataset.size()];
-            notifyDataSetChanged();
-        }
 
+           //notifyDataSetChanged();
+
+        }
 }
 

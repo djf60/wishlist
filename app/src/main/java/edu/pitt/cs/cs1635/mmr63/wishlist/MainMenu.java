@@ -1,4 +1,5 @@
-package edu.pitt.cs.cs1635.mmr63.wishlist;
+package edu.pitt.cs.cs1635.mdb91.wishlist;
+
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,10 +19,12 @@ public class MainMenu extends AppCompatActivity {
 
     public void gotoMyLists(View view)
     {
+
         //go to my lists
         Intent intent = new Intent(this, MyListActivity.class);
         intent.putExtra("username", username);
         startActivity(intent);
+
     }
 
     public void gotoPurchased(View view)

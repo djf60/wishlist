@@ -1,4 +1,4 @@
-package edu.pitt.cs.cs1635.mmr63.wishlist;
+package edu.pitt.cs.cs1635.mdb91.wishlist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,16 +22,16 @@ public class WishList {
 
     public WishList(String u, int id)
     {
-        this(u, id, null, false);
+        this(u, id, new ArrayList(), false);
     }
 
     public WishList(String u)
     {
-        this(u, 0, null, false);
+        this(u, 0, new ArrayList(), false);
     }
     public WishList()
     {
-        this("", 0, null, false);
+        this("", 0, new ArrayList(), false);
     }
 
     public void addItem(ListItem newItem)
