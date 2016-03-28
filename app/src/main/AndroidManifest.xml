@@ -14,16 +14,18 @@
             </intent-filter>
         </activity>
 	
-	<activity
-            android:name=".MyListActivity"
+	<activity android:name=".MyListActivity"
             android:label="@string/title_activity_my_list" />
-        
-    	<activity android:name=".MainMenu"
-   		android:label=".MainMenu">
-   		<intent-filter>
-       		<action android:name="android.intent.action.VIEW" />
-   		</intent-filter>
-	</activity>
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+        </intent-filter>
+    />
+    <activity android:name=".MainMenu"
+        android:label="@string/main_menu">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+        </intent-filter>
+    </activity>
     </application>
 
 </manifest>
