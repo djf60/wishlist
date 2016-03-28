@@ -87,7 +87,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             holder.description.setText(item.getDescription());
             holder.price.setText("$"+String.valueOf(item.getPrice()));
             holder.source.setText(item.getSource());
-            holder.priority.setText(item.getPriority());
+            holder.priority.setText(String.valueOf(item.getPriority()));
             //setup checkbox clickListener
             View.OnClickListener clickListener = new View.OnClickListener() {
                 @Override

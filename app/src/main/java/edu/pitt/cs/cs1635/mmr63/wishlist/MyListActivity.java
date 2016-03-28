@@ -11,9 +11,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
-
 public class MyListActivity extends Activity {
 
     private RecyclerView mRecyclerView;
@@ -24,11 +21,15 @@ public class MyListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_list);
-
-        //initialize list object
-
-        //
-        mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+ 
+        //INIT LIST OBJECT HERE//
+	/*
+	.....
+	
+	*/
+	
+        
+	mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -45,7 +46,7 @@ public class MyListActivity extends Activity {
 
     public void addItem(View view)
     {
-        final ListItem newItem = new ListItem(null, 0, null, 0, null, 0, false, null);
+        final ListItem newItem = new ListItem("hut", 0, "but", 0, "chunt", 0, false, null);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // Get the layout inflater
         LayoutInflater inflater = this.getLayoutInflater();
@@ -53,29 +54,30 @@ public class MyListActivity extends Activity {
         // Pass null as the parent view because its going in the dialog layout
         builder.setView(inflater.inflate(R.layout.add_edit_dialogue, null));
         builder.setTitle("Add an Item");
-        builder.setPositiveButton("Add item", new DialogInterface.OnClickListener() {
+        builder.setNeutralButton("Add item", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked OK button
-                EditText field = (EditText)findViewById(R.id.add_name);
+                EditText field = (EditText)((AlertDialog)dialog).findViewById(R.id.add_name);
                 String name = field.getText().toString();
                 newItem.name = name;
 
-                field = (EditText)findViewById(R.id.add_description);
+                field = (EditText)((AlertDialog)dialog).findViewById(R.id.add_description);
                 String description = field.getText().toString();
                 newItem.description = description;
 
-                field = (EditText)findViewById(R.id.add_price);
+                field = (EditText)((AlertDialog)dialog).findViewById(R.id.add_price);
                 double price = Double.parseDouble(field.getText().toString());
                 newItem.price = price;
 
-                field = (EditText)findViewById(R.id.add_source);
+                field = (EditText)((AlertDialog)dialog).findViewById(R.id.add_source);
                 String source = field.getText().toString();
                 newItem.source = source;
 
-                field = (EditText)findViewById(R.id.add_priority);
+                field = (EditText)((AlertDialog)dialog).findViewById(R.id.add_priority);
                 int priority = Integer.parseInt(field.getText().toString());
                 newItem.priority = priority;
 
+                MyListActivity.this.mAdapter.addItem(newItem);
                 dialog.dismiss();
             }
         });
@@ -85,9 +87,8 @@ public class MyListActivity extends Activity {
                 dialog.dismiss();
             }
         });
-
-        if (newItem.name != null)
-            mAdapter.addItem(newItem);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     public void editItem(View view)
@@ -139,23 +140,23 @@ public class MyListActivity extends Activity {
             builder.setPositiveButton("Confirm Changes", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // User clicked OK button
-                    EditText field = (EditText)findViewById(R.id.add_name);
+                    EditText field = (EditText) findViewById(R.id.add_name);
                     String name = field.getText().toString();
                     newItem.name = name;
 
-                    field = (EditText)findViewById(R.id.add_description);
+                    field = (EditText) findViewById(R.id.add_description);
                     String description = field.getText().toString();
                     newItem.description = description;
 
-                    field = (EditText)findViewById(R.id.add_price);
+                    field = (EditText) findViewById(R.id.add_price);
                     double price = Double.parseDouble(field.getText().toString());
                     newItem.price = price;
 
-                    field = (EditText)findViewById(R.id.add_source);
+                    field = (EditText) findViewById(R.id.add_source);
                     String source = field.getText().toString();
                     newItem.source = source;
 
-                    field = (EditText)findViewById(R.id.add_priority);
+                    field = (EditText) findViewById(R.id.add_priority);
                     int priority = Integer.parseInt(field.getText().toString());
                     newItem.priority = priority;
 
@@ -169,6 +170,7 @@ public class MyListActivity extends Activity {
                 }
             });
 
+            builder.create();
             mAdapter.editItem(index, newItem);
         }
     }
