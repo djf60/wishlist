@@ -15,4 +15,8 @@
     <string name="add_item">Add Item</string>
     <string name="edit_item">Edit Item</string>
     <string name="remove_item">Remove Item</string>
+    <string name="backString">Back</string>
+    <string name="addItem">Add Item</string>
+    <string name="editItem">Edit Item</string>
+    <string name="removeItem">Remove Item</string>
 </resources>

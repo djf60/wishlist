@@ -1,4 +1,4 @@
-package edu.pitt.cs.cs1635.mdb91.wishlist;
+package edu.pitt.cs.cs1635.mmr63.wishlist;
 
 /**
  * Created by Max on 3/27/2016.
