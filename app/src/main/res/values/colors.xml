@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000</color>
     <color name="list_row_border">#7070FF</color>
+    <color name="white">#fff</color>
+    <color name = "background">#1C4648</color>
 </resources>
