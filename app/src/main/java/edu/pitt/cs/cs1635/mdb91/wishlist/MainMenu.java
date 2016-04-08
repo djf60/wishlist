@@ -38,11 +38,11 @@ public class MainMenu extends AppCompatActivity {
 
     public void gotoFindLists(View view)
     {
-        /*
-        Intent intent = new Intent(this, FindListActivity.class);
+
+        Intent intent = new Intent(this, Find.class);
         intent.putExtra("username", username);
         startActivity(intent);
-        */
+
     }
 
     public void logout(View view)

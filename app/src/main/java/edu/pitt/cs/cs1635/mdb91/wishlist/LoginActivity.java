@@ -1,10 +1,12 @@
 package edu.pitt.cs.cs1635.mdb91.wishlist;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -26,6 +28,26 @@ public class LoginActivity extends AppCompatActivity {
         prefs = getPreferences(MODE_PRIVATE);
         userBox.setText(prefs.getString("username", ""));
         passwordBox.setText(prefs.getString("password", ""));
+
+        passwordBox.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            login(null);
+                            return true;
+                        default:
+                            break;
+                    }
+                }
+                return false;
+            }
+        });
     }
 
     public void login(View view)
