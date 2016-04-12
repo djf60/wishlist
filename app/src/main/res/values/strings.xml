@@ -10,4 +10,12 @@
     <string name="my_purchases_items">My Purchased Items</string>
     <string name="find_lists">Find a WishList</string>
     <string name="logout">Log Out</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="add_item">Add Item</string>
+    <string name="edit_item">Edit Item</string>
+    <string name="remove_item">Remove Item</string>
+    <string name="backString">Back</string>
+    <string name="addItem">Add Item</string>
+    <string name="editItem">Edit Item</string>
+    <string name="removeItem">Remove Item</string>
 </resources>

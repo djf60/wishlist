@@ -11,9 +11,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:text="Back"
+        android:text="@string/backString"
         android:background="@color/list_row_border"
-        android:textColor="@color/white"
+        android:textColor="#ffffff"
         android:onClick="backToMenu"/>
     <TextView
         android:layout_width="match_parent"
@@ -24,7 +24,7 @@
         android:paddingTop="30dp"
         android:textStyle="bold"
         android:background="@color/list_row_border"
-        android:textColor="@color/white"
+        android:textColor="#ffffff"
         android:paddingBottom="10dp"
         />
     </LinearLayout>
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
-        android:background="@color/background"
+        android:background="#ffffff"
         />
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
             android:layout_weight="1"
-            android:text="Add Item"
+            android:text="@string/addItem"
             android:textSize="17sp"
             android:onClick="addItem"/>
         <Button
@@ -59,7 +59,7 @@
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
             android:layout_weight="1"
-            android:text="Edit Item"
+            android:text="@string/editItem"
             android:textSize="17sp"
             android:onClick="editItem"/>
         <Button
@@ -69,7 +69,7 @@
             android:layout_weight="1"
             android:paddingTop="30dp"
             android:paddingBottom="30dp"
-            android:text="Remove Item"
+            android:text="@string/removeItem"
             android:textSize="17sp"
             android:onClick="removeItems"/>
     </LinearLayout>
