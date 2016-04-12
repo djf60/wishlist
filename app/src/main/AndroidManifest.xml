@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="edu.pitt.cs.cs1635.mmr63.wishlist">
+    package="edu.pitt.cs.cs1635.mdb91.wishlist">
 
     <application
         android:allowBackup="true"
@@ -7,25 +8,30 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-	<activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	
-	<activity android:name=".MyListActivity"
-            android:label="@string/title_activity_my_list" />
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-        </intent-filter>
-    />
-    <activity android:name=".MainMenu"
-        android:label="@string/main_menu">
-        <intent-filter>
-            <action android:name="android.intent.action.VIEW" />
-        </intent-filter>
-    </activity>
+        <activity
+            android:name=".MyListActivity"
+            android:label="@string/title_activity_my_list"
+            android:parentActivityName=".MainMenu" />
+        <activity android:name=".AddEditActivity" />
+        <activity
+            android:name=".MainMenu"
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".OtherListActivity"
+            android:parentActivityName=".Find"></activity>
+        <activity
+            android:name=".Find"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainMenu"></activity>
+        <activity android:name=".MyPurchases"
+            android:parentActivityName=".MainMenu"></activity>
     </application>
 
 </manifest>
