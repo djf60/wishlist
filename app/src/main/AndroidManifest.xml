@@ -11,6 +11,7 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -21,15 +22,16 @@
         <activity android:name=".AddEditActivity" />
         <activity
             android:name=".MainMenu"
-            android:launchMode="singleTop">
-        </activity>
-        <activity android:name=".OtherListActivity"
-            android:parentActivityName=".Find">
-        </activity>
-        <activity android:name=".Find"
+            android:launchMode="singleTop"></activity>
+        <activity
+            android:name=".OtherListActivity"
+            android:parentActivityName=".Find"></activity>
+        <activity
+            android:name=".Find"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainMenu">
-        </activity>
+            android:parentActivityName=".MainMenu"></activity>
+        <activity android:name=".MyPurchases"
+            android:parentActivityName=".MainMenu"></activity>
     </application>
 
 </manifest>

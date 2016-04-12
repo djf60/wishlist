@@ -29,11 +29,11 @@ public class MainMenu extends AppCompatActivity {
 
     public void gotoPurchased(View view)
     {
-        /*
-        Intent intent = new Intent(this, MyPurchasedActivity.class);
+
+        Intent intent = new Intent(this, MyPurchases.class);
         intent.putExtra("username", username);
         startActivity(intent);
-        */
+
     }
 
     public void gotoFindLists(View view)
