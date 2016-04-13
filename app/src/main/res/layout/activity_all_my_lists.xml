@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.pitt.cs.cs1635.mdb91.wishlist.AllMyListsActivity"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Back"
+            android:background="@color/list_row_border"
+            android:textColor="@color/white"
+            android:onClick="backToMenu"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/myLists"
+            android:textSize="40sp"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:textStyle="bold"
+            android:background="@color/list_row_border"
+            android:textColor="@color/white"
+            android:paddingBottom="10dp"
+            />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/all_my_lists_view"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:background="@color/background" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:layout_weight="1"
+        android:background="@color/list_row_border">
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:layout_weight="1"
+            android:text="@string/add_list"
+            android:textSize="17sp"
+            android:onClick="addList" />
+
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:paddingTop="30dp"
+            android:paddingBottom="30dp"
+            android:text="@string/remove_list"
+            android:textSize="17sp" />
+    </LinearLayout>
+</LinearLayout>

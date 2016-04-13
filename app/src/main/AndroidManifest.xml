@@ -22,16 +22,18 @@
         <activity android:name=".AddEditActivity" />
         <activity
             android:name=".MainMenu"
-            android:launchMode="singleTop"></activity>
+            android:launchMode="singleTop" />
         <activity
             android:name=".OtherListActivity"
-            android:parentActivityName=".Find"></activity>
+            android:parentActivityName=".Find" />
         <activity
             android:name=".Find"
             android:launchMode="singleTop"
-            android:parentActivityName=".MainMenu"></activity>
-        <activity android:name=".MyPurchases"
-            android:parentActivityName=".MainMenu"></activity>
+            android:parentActivityName=".MainMenu" />
+        <activity
+            android:name=".MyPurchases"
+            android:parentActivityName=".MainMenu" />
+        <activity android:name=".AllMyListsActivity"></activity>
     </application>
 
 </manifest>

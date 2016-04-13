@@ -19,9 +19,13 @@ public class MainMenu extends AppCompatActivity {
 
     public void gotoMyLists(View view)
     {
-
+        /*
         //go to my lists
         Intent intent = new Intent(this, MyListActivity.class);
+        intent.putExtra("username", username);
+        startActivity(intent);
+        */
+        Intent intent = new Intent(this, AllMyListsActivity.class);
         intent.putExtra("username", username);
         startActivity(intent);
 
