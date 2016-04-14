@@ -16,6 +16,7 @@
         android:textColor="@color/white"
         android:onClick="gotoMyLists"/>
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/my_list"

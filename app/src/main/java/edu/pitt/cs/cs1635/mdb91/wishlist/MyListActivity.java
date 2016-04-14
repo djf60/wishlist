@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MyListActivity extends Activity {
@@ -25,7 +26,10 @@ public class MyListActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_list);
-
+        Intent intent = getIntent();
+        String title = intent.getStringExtra("listName");
+        TextView titleView = (TextView)findViewById(R.id.title);
+        titleView.setText(title);
         //initialize list object
         list = new WishList();
         list.addItem(new ListItem( "play-doh", 1, "that fake clay stuff", .99, "playdoh.web", 0, false, null));
@@ -200,7 +204,7 @@ public class MyListActivity extends Activity {
         Log.d("DEBUG", "End addToSelected.  isSelected now = "+view.isSelected());
     }
 
-    public void backToMenu(View view)
+    public void gotoMyLists(View view)
     {
         NavUtils.navigateUpFromSameTask(this);
     }

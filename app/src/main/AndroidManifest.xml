@@ -18,7 +18,7 @@
         <activity
             android:name=".MyListActivity"
             android:label="@string/title_activity_my_list"
-            android:parentActivityName=".MainMenu" />
+            android:parentActivityName=".AllMyListsActivity" />
         <activity android:name=".AddEditActivity" />
         <activity
             android:name=".MainMenu"
@@ -33,7 +33,10 @@
         <activity
             android:name=".MyPurchases"
             android:parentActivityName=".MainMenu" />
-        <activity android:name=".AllMyListsActivity"></activity>
+        <activity android:name=".AllMyListsActivity"
+            android:launchMode="singleTop"
+            android:parentActivityName=".MainMenu">
+        </activity>
     </application>
 
 </manifest>

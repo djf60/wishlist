@@ -26,7 +26,7 @@ public class AllMyListsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_my_lists);
         listNames = new ArrayList<String>();
-        listNames.add("My List");
+        listNames.add("Birthday");
 
         allLists = new AllMyListsAdapter(listNames, this);
 
@@ -52,7 +52,8 @@ public class AllMyListsActivity extends AppCompatActivity {
                 // User clicked OK button
                 EditText field = (EditText) ((AlertDialog) dialog).findViewById(R.id.add_list);
                 String name = field.getText().toString();
-                listNames.add(name);
+                //listNames.add(name);
+                AllMyListsActivity.this.allLists.add(0, name);
                 dialog.dismiss();
             }
 
